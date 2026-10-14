@@ -1,0 +1,18 @@
+# Local verification output
+artifacts/
+.playwright-mcp/
+
+# Editor and operating-system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Logs and local environment files
+*.log
+.env
+.env.*
+!.env.example
+
+# Dependency directories, if used locally
+node_modules/

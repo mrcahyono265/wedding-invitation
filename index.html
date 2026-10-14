@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f7f3e9" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <meta
+      name="description"
+      content="Undangan akad nikah Mohammad Ridho Cahyono dan Azzahra Dinar Rindi Pawitra Islami." />
+    <title>Ridho & Zahra — Akad Nikah</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Great+Vibes&family=Playfair+Display:wght@500;600&family=Scheherazade+New:wght@400;700&display=swap"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div
+      class="opening"
+      id="opening"
+      aria-modal="true"
+      role="dialog"
+      aria-labelledby="opening-title">
+      <div class="opening__art"></div>
+      <div class="opening__content">
+        <p class="eyebrow">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</p>
+        <p class="opening__label">Undangan Akad Nikah</p>
+        <h1 id="opening-title">Ridho <span>&amp;</span> Zahra</h1>
+        <p class="opening__date">Jumat, 23 Oktober 2026</p>
+        <button class="button button--primary" id="open-invitation">
+          Buka Undangan <span aria-hidden="true">→</span>
+        </button>
+      </div>
+    </div>
+
+    <button
+      class="sound-toggle"
+      id="sound-toggle"
+      type="button"
+      aria-pressed="false"
+      aria-label="Nyalakan musik latar">
+      <span aria-hidden="true">♩</span><span id="sound-label">Musik</span>
+    </button>
+
+    <main id="main-content">
+      <section class="hero section">
+        <div
+          class="hero__image"
+          role="img"
+          aria-label="Ilustrasi taman floral bernuansa Islami"></div>
+        <div class="hero__content reveal">
+          <p class="eyebrow">Undangan Akad Nikah</p>
+          <p class="arabic arabic--small">
+            وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا
+          </p>
+          <h1>
+            Mohammad Ridho Cahyono<br /><em>&amp;</em><br />Azzahra Dinar Rindi
+            Pawitra Islami
+          </h1>
+          <p class="hero__date">23 · 10 · 2026</p>
+          <a class="text-link" href="#acara"
+            >Lihat detail acara <span>↓</span></a
+          >
+        </div>
+      </section>
+
+      <section class="section section--verse" aria-labelledby="verse-title">
+        <div class="content content--narrow reveal">
+          <p class="section-kicker">
+            Dengan memohon rahmat Allah Subhanahu wa Ta'ala
+          </p>
+          <h2 id="verse-title" class="arabic">
+            وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا
+            لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً
+          </h2>
+          <p class="translation">
+            “Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan
+            pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung
+            dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa
+            kasih dan sayang.”
+          </p>
+          <p class="source">QS. Ar-Rūm: 21</p>
+        </div>
+      </section>
+
+      <section class="section couple" aria-labelledby="couple-title">
+        <div class="content reveal">
+          <p class="section-kicker">
+            Dengan penuh kebahagiaan, kami mengundang Bapak/Ibu/Saudara/i
+          </p>
+          <h2 id="couple-title">Untuk hadir dalam akad nikah kami</h2>
+          <div class="couple__names">
+            <article>
+              <p class="couple__role">Mempelai Pria</p>
+              <h3>Mohammad Ridho Cahyono</h3>
+              <p>bin Agung Cahyono</p>
+            </article>
+            <div class="couple__amp" aria-hidden="true">&amp;</div>
+            <article>
+              <p class="couple__role">Mempelai Wanita</p>
+              <h3>Azzahra Dinar Rindi Pawitra Islami</h3>
+              <p>binti alm. Didik Eko Budi Santoso</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="section section--sage"
+        id="acara"
+        aria-labelledby="event-title">
+        <div class="content event reveal">
+          <p class="section-kicker">Save the date</p>
+          <h2 id="event-title">Menuju hari bahagia</h2>
+          <div class="countdown" aria-label="Hitung mundur menuju akad nikah">
+            <div><strong id="days">00</strong><span>Hari</span></div>
+            <div><strong id="hours">00</strong><span>Jam</span></div>
+            <div><strong id="minutes">00</strong><span>Menit</span></div>
+            <div><strong id="seconds">00</strong><span>Detik</span></div>
+          </div>
+          <div class="event__card">
+            <p class="event__type">Akad Nikah</p>
+            <h3>Jumat, 23 Oktober 2026</h3>
+            <p>Waktu akan diinformasikan menyusul</p>
+            <div class="ornament" aria-hidden="true">✦</div>
+            <p class="event__place">
+              Kantor Urusan Agama (KUA)<br />Kecamatan Mlarak, Ponorogo
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section location" aria-labelledby="location-title">
+        <div class="content reveal">
+          <p class="section-kicker">Lokasi acara</p>
+          <h2 id="location-title">KUA Kecamatan Mlarak</h2>
+          <p class="location__intro">Ponorogo, Jawa Timur</p>
+          <div class="map-wrap">
+            <iframe
+              title="Peta KUA Kecamatan Mlarak"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3951.6796390879626!2d111.51209361150208!3d-7.928489692062306!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e790af5e95eab69%3A0xd2b93242ad77ebfa!2sKantor%20Urusan%20Agama%20(KUA)%20Kecamatan%20Mlarak!5e0!3m2!1sid!2sid!4v1792013277596!5m2!1sid!2sid"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="strict-origin-when-cross-origin"></iframe>
+          </div>
+          <a
+            class="button button--outline"
+            href="https://www.google.com/maps/dir/?api=1&destination=Kantor+Urusan+Agama+(KUA)+Kecamatan+Mlarak"
+            target="_blank"
+            rel="noopener"
+            >Buka Petunjuk Arah <span aria-hidden="true">↗</span></a
+          >
+        </div>
+      </section>
+
+      <section class="section rsvp" id="rsvp" aria-labelledby="rsvp-title">
+        <div class="content content--narrow reveal">
+          <p class="section-kicker">Konfirmasi kehadiran</p>
+          <h2 id="rsvp-title">RSVP</h2>
+          <p class="rsvp__intro">
+            Kehadiran Anda merupakan kebahagiaan bagi kami. Mohon isi konfirmasi
+            berikut.
+          </p>
+          <form id="rsvp-form" novalidate>
+            <label for="name">Nama lengkap</label>
+            <input
+              id="name"
+              name="name"
+              autocomplete="name"
+              required
+              placeholder="Tulis nama Anda" />
+            <fieldset>
+              <legend>Konfirmasi kehadiran</legend>
+              <label class="radio"
+                ><input
+                  type="radio"
+                  name="attendance"
+                  value="hadir"
+                  required /><span>InsyaAllah hadir</span></label
+              >
+              <label class="radio"
+                ><input
+                  type="radio"
+                  name="attendance"
+                  value="berhalangan" /><span>Berhalangan hadir</span></label
+              >
+            </fieldset>
+            <div class="guest-count" id="guest-count" hidden>
+              <label for="guests">Jumlah orang yang hadir</label>
+              <select id="guests" name="guests">
+                <option value="1">1 orang</option>
+                <option value="2">2 orang</option>
+                <option value="3">3 orang</option>
+                <option value="4">4 orang</option>
+                <option value="5">5 orang</option>
+                <option value="6">6 orang</option>
+              </select>
+            </div>
+            <input
+              class="honeypot"
+              name="website"
+              tabindex="-1"
+              autocomplete="off"
+              aria-hidden="true" />
+            <p class="form-note">
+              Data RSVP hanya digunakan untuk persiapan acara.
+            </p>
+            <button class="button button--primary" type="submit">
+              Kirim Konfirmasi <span aria-hidden="true">→</span>
+            </button>
+            <p class="form-status" id="form-status" role="status"></p>
+          </form>
+        </div>
+      </section>
+
+      <section class="section closing" aria-label="Penutup">
+        <div class="closing__art"></div>
+        <div class="content content--narrow reveal">
+          <p class="arabic">
+            بَارَكَ اللّٰهُ لَكُمَا وَبَارَكَ عَلَيْكُمَا وَجَمَعَ بَيْنَكُمَا
+            فِي خَيْرٍ
+          </p>
+          <p>
+            Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila
+            Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu.
+          </p>
+          <h2>Ridho &amp; Zahra</h2>
+          <p class="closing__thanks">Terima kasih</p>
+        </div>
+      </section>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
