@@ -1,4 +1,5 @@
-const RSVP_ENDPOINT = ""; // Paste the Google Apps Script Web App URL here.
+const RSVP_ENDPOINT =
+  "https://script.google.com/macros/s/AKfycbyZe7oVYd9KKfFd5RgxxyQ220syM182cqSVgHOHKlQIP_uizJL79uNhvLkrnhB-LZNh/exec"; // Paste the Google Apps Script Web App URL here.
 const eventStart = new Date("2026-10-23T00:00:00+07:00");
 
 const opening = document.querySelector("#opening");
@@ -8,12 +9,20 @@ let musicTimer;
 
 function updateCountdown() {
   const remaining = Math.max(0, eventStart - new Date());
-  const units = [["days", 86400000], ["hours", 3600000], ["minutes", 60000], ["seconds", 1000]];
+  const units = [
+    ["days", 86400000],
+    ["hours", 3600000],
+    ["minutes", 60000],
+    ["seconds", 1000],
+  ];
   let rest = remaining;
   units.forEach(([id, size]) => {
     const value = Math.floor(rest / size);
     rest %= size;
-    document.querySelector(`#${id}`).textContent = String(value).padStart(2, "0");
+    document.querySelector(`#${id}`).textContent = String(value).padStart(
+      2,
+      "0",
+    );
   });
 }
 
@@ -35,7 +44,9 @@ function startMusic() {
   audioContext.resume();
   const notes = [261.63, 329.63, 392, 523.25, 392, 329.63];
   let index = 0;
-  const play = () => { playNote(notes[index++ % notes.length], audioContext.currentTime, 1.45); };
+  const play = () => {
+    playNote(notes[index++ % notes.length], audioContext.currentTime, 1.45);
+  };
   play();
   musicTimer = setInterval(play, 1500);
   soundToggle.setAttribute("aria-pressed", "true");
@@ -55,40 +66,66 @@ document.querySelector("#open-invitation").addEventListener("click", () => {
   startMusic();
 });
 
-soundToggle.addEventListener("click", () => soundToggle.getAttribute("aria-pressed") === "true" ? stopMusic() : startMusic());
+soundToggle.addEventListener("click", () =>
+  soundToggle.getAttribute("aria-pressed") === "true"
+    ? stopMusic()
+    : startMusic(),
+);
 
-document.querySelectorAll('input[name="attendance"]').forEach((input) => input.addEventListener("change", (event) => {
-  document.querySelector("#guest-count").hidden = event.target.value !== "hadir";
-}));
+document.querySelectorAll('input[name="attendance"]').forEach((input) =>
+  input.addEventListener("change", (event) => {
+    document.querySelector("#guest-count").hidden =
+      event.target.value !== "hadir";
+  }),
+);
 
-document.querySelector("#rsvp-form").addEventListener("submit", async (event) => {
-  event.preventDefault();
-  const form = event.currentTarget;
-  const status = document.querySelector("#form-status");
-  if (!form.reportValidity()) return;
-  const data = new FormData(form);
-  if (data.get("website")) return;
-  if (!RSVP_ENDPOINT) {
-    status.textContent = "RSVP sedang disiapkan. Silakan hubungi mempelai untuk konfirmasi.";
-    return;
-  }
-  const submit = form.querySelector('button[type="submit"]');
-  submit.disabled = true;
-  submit.textContent = "Mengirim…";
-  try {
-    await fetch(RSVP_ENDPOINT, { method: "POST", body: new URLSearchParams(data), mode: "no-cors" });
-    status.textContent = data.get("attendance") === "hadir" ? "Jazakumullahu khairan. Konfirmasi kehadiran Anda telah kami terima." : "Jazakumullahu khairan atas konfirmasinya. Semoga Allah membalas kebaikan Anda.";
-    form.reset();
-    document.querySelector("#guest-count").hidden = true;
-  } catch {
-    status.textContent = "Maaf, konfirmasi belum terkirim. Silakan coba kembali.";
-  } finally {
-    submit.disabled = false;
-    submit.innerHTML = 'Kirim Konfirmasi <span aria-hidden="true">→</span>';
-  }
-});
+document
+  .querySelector("#rsvp-form")
+  .addEventListener("submit", async (event) => {
+    event.preventDefault();
+    const form = event.currentTarget;
+    const status = document.querySelector("#form-status");
+    if (!form.reportValidity()) return;
+    const data = new FormData(form);
+    if (data.get("website")) return;
+    if (!RSVP_ENDPOINT) {
+      status.textContent =
+        "RSVP sedang disiapkan. Silakan hubungi mempelai untuk konfirmasi.";
+      return;
+    }
+    const submit = form.querySelector('button[type="submit"]');
+    submit.disabled = true;
+    submit.textContent = "Mengirim…";
+    try {
+      await fetch(RSVP_ENDPOINT, {
+        method: "POST",
+        body: new URLSearchParams(data),
+        mode: "no-cors",
+      });
+      status.textContent =
+        data.get("attendance") === "hadir"
+          ? "Jazakumullahu khairan. Konfirmasi kehadiran Anda telah kami terima."
+          : "Jazakumullahu khairan atas konfirmasinya. Semoga Allah membalas kebaikan Anda.";
+      form.reset();
+      document.querySelector("#guest-count").hidden = true;
+    } catch {
+      status.textContent =
+        "Maaf, konfirmasi belum terkirim. Silakan coba kembali.";
+    } finally {
+      submit.disabled = false;
+      submit.innerHTML = 'Kirim Konfirmasi <span aria-hidden="true">→</span>';
+    }
+  });
 
-const observer = new IntersectionObserver((entries) => entries.forEach((entry) => entry.isIntersecting && entry.target.classList.add("visible")), { threshold: 0.12 });
-document.querySelectorAll(".reveal").forEach((element) => observer.observe(element));
+const observer = new IntersectionObserver(
+  (entries) =>
+    entries.forEach(
+      (entry) => entry.isIntersecting && entry.target.classList.add("visible"),
+    ),
+  { threshold: 0.12 },
+);
+document
+  .querySelectorAll(".reveal")
+  .forEach((element) => observer.observe(element));
 updateCountdown();
 setInterval(updateCountdown, 1000);

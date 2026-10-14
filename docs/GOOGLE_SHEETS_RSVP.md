@@ -9,7 +9,7 @@ Integrasi ini memakai Google Sheets dan Google Apps Script gratis dari akun Goog
 3. Tambahkan judul kolom pada baris pertama:
 
    | Waktu | Nama | Kehadiran | Jumlah tamu |
-   | --- | --- | --- |
+   | ----- | ---- | --------- | ----------- |
 
 ## 2. Tambahkan Apps Script
 
