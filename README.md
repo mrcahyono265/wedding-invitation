@@ -1,4 +1,4 @@
-# Undangan Akad Ridho & Zahra
+# Undangan Syukuran Nikah Zahra Dinar
 
 Microsite undangan akad nikah yang responsif, dibangun dengan HTML, CSS, dan JavaScript tanpa proses build atau dependensi.
 
@@ -16,8 +16,8 @@ RSVP dikirim ke Google Sheets melalui Google Apps Script. Ikuti panduan [docs/GO
 
 ## Sebelum membagikan undangan
 
-- Isi jam akad pada kartu acara di `index.html`.
-- Ubah `eventStart` di `app.js` menjadi jam akad yang pasti.
+- Periksa kembali jam syukuran pada kartu acara di `index.html`.
+- Periksa kembali `eventStart` di `app.js` agar sesuai waktu acara.
 - Hubungkan `RSVP_ENDPOINT` sesuai panduan Google Sheets.
 - Periksa kembali peta, tautan arah, dan tampilan mobile.
 

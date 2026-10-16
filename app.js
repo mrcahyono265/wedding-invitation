@@ -1,6 +1,6 @@
 const RSVP_ENDPOINT =
   "https://script.google.com/macros/s/AKfycbyZe7oVYd9KKfFd5RgxxyQ220syM182cqSVgHOHKlQIP_uizJL79uNhvLkrnhB-LZNh/exec"; // Paste the Google Apps Script Web App URL here.
-const eventStart = new Date("2026-10-23T00:00:00+07:00");
+const eventStart = new Date("2026-10-23T16:00:00+07:00");
 
 const opening = document.querySelector("#opening");
 const soundToggle = document.querySelector("#sound-toggle");
