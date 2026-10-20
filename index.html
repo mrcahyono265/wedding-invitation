@@ -129,6 +129,18 @@
             <div class="ornament" aria-hidden="true">✦</div>
             <p class="event__place">SEDAYU resto<br />Ponorogo, Jawa Timur</p>
           </div>
+          <details class="rundown">
+            <summary>Lihat Rangkaian Acara</summary>
+            <ol>
+              <li>Pembukaan oleh Pembawa Acara</li>
+              <li>Pembacaan Ayat Suci Al-Qur'an</li>
+              <li>Sambutan Keluarga Mempelai Wanita</li>
+              <li>Sambutan Keluarga Mempelai Pria</li>
+              <li>Doa</li>
+              <li>Serah Terima</li>
+              <li>Sungkeman</li>
+            </ol>
+          </details>
         </div>
       </section>
 
@@ -188,15 +200,30 @@
               >
             </fieldset>
             <div class="guest-count" id="guest-count" hidden>
-              <label for="guests">Jumlah orang yang hadir</label>
-              <select id="guests" name="guests">
-                <option value="1">1 orang</option>
-                <option value="2">2 orang</option>
-                <option value="3">3 orang</option>
-                <option value="4">4 orang</option>
-                <option value="5">5 orang</option>
-                <option value="6">6 orang</option>
-              </select>
+              <div class="guest-fields">
+                <div>
+                  <label for="adults">Jumlah tamu dewasa</label>
+                  <select id="adults" name="adults" disabled>
+                    <option value="1">1 orang</option>
+                    <option value="2">2 orang</option>
+                    <option value="3">3 orang</option>
+                    <option value="4">4 orang</option>
+                    <option value="5">5 orang</option>
+                    <option value="6">6 orang</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="children">Jumlah tamu anak-anak</label>
+                  <select id="children" name="children" disabled>
+                    <option value="0">0 orang</option>
+                    <option value="1">1 orang</option>
+                    <option value="2">2 orang</option>
+                    <option value="3">3 orang</option>
+                    <option value="4">4 orang</option>
+                    <option value="5">5 orang</option>
+                  </select>
+                </div>
+              </div>
             </div>
             <input
               class="honeypot"

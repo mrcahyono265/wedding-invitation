@@ -6,13 +6,16 @@ function doPost(e) {
 
   const name = (data.name || '').trim();
   const attendance = data.attendance;
-  const guests = attendance === 'hadir' ? Number(data.guests) : 0;
-  if (!name || !['hadir', 'berhalangan'].includes(attendance) || guests < 0 || guests > 6) {
+  const attending = attendance === 'hadir';
+  const adults = attending ? Number(data.adults) : 0;
+  const children = attending ? Number(data.children) : 0;
+  const invalidGuestCount = attending && (!Number.isInteger(adults) || !Number.isInteger(children) || adults < 1 || children < 0 || adults + children > 6);
+  if (!name || !['hadir', 'berhalangan'].includes(attendance) || invalidGuestCount) {
     return json({ ok: false, error: 'Data tidak valid.' });
   }
 
   const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(SHEET_NAME);
-  sheet.appendRow([new Date(), name, attendance, guests]);
+  sheet.appendRow([new Date(), name, attendance, adults, children]);
   return json({ ok: true });
 }
 

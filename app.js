@@ -72,12 +72,29 @@ soundToggle.addEventListener("click", () =>
     : startMusic(),
 );
 
+const guestCount = document.querySelector("#guest-count");
+const adults = document.querySelector("#adults");
+const children = document.querySelector("#children");
+
+function updateChildOptions() {
+  const selected = Math.min(Number(children.value), 6 - Number(adults.value));
+  children.innerHTML = Array.from({ length: 7 - Number(adults.value) }, (_, index) =>
+    `<option value="${index}">${index} orang</option>`,
+  ).join("");
+  children.value = selected;
+}
+
 document.querySelectorAll('input[name="attendance"]').forEach((input) =>
   input.addEventListener("change", (event) => {
-    document.querySelector("#guest-count").hidden =
-      event.target.value !== "hadir";
+    const attending = event.target.value === "hadir";
+    guestCount.hidden = !attending;
+    adults.disabled = !attending;
+    children.disabled = !attending;
+    if (attending) updateChildOptions();
   }),
 );
+
+adults.addEventListener("change", updateChildOptions);
 
 document
   .querySelector("#rsvp-form")
@@ -107,7 +124,9 @@ document
           ? "Jazakumullahu khairan. Konfirmasi kehadiran Anda telah kami terima."
           : "Jazakumullahu khairan atas konfirmasinya. Semoga Allah membalas kebaikan Anda.";
       form.reset();
-      document.querySelector("#guest-count").hidden = true;
+      guestCount.hidden = true;
+      adults.disabled = true;
+      children.disabled = true;
     } catch {
       status.textContent =
         "Maaf, konfirmasi belum terkirim. Silakan coba kembali.";

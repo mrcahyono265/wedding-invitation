@@ -8,8 +8,8 @@ Integrasi ini memakai Google Sheets dan Google Apps Script gratis dari akun Goog
 2. Ubah nama tab pertama menjadi `RSVP`.
 3. Tambahkan judul kolom pada baris pertama:
 
-   | Waktu | Nama | Kehadiran | Jumlah tamu |
-   | ----- | ---- | --------- | ----------- |
+   | Waktu | Nama | Kehadiran | Tamu dewasa | Tamu anak-anak |
+   | ----- | ---- | --------- | ----------- | -------------- |
 
 ## 2. Tambahkan Apps Script
 
@@ -17,7 +17,9 @@ Integrasi ini memakai Google Sheets dan Google Apps Script gratis dari akun Goog
 2. Hapus kode bawaan lalu tempel isi file [`../apps-script/Code.gs`](../apps-script/Code.gs).
 3. Klik **Save**.
 
-Script menerima nama, status kehadiran, dan jumlah tamu. Kolom `website` adalah honeypot sederhana untuk mengabaikan sebagian bot.
+Jika Apps Script sudah pernah diterbitkan, setelah menyimpan pilih **Deploy → Manage deployments**, edit deployment yang ada, lalu pilih **New version** dan **Deploy**. URL `/exec` tetap sama.
+
+Script menerima nama, status kehadiran, jumlah tamu dewasa, dan jumlah tamu anak-anak. Kolom `website` adalah honeypot sederhana untuk mengabaikan sebagian bot.
 
 ## 3. Terbitkan sebagai Web App
 
